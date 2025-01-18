@@ -20,41 +20,44 @@
         }
 
         .chat-container {
-            width: 450px;
-            height: 500px;
+            width: 500px;
+            height: 600px;
             background-color: #4c1c24; /* Dark Red */
             box-shadow: 0 0 40px rgba(0, 255, 0, 0.6); /* Green Glow */
-            border-radius: 20px;
+            border-radius: 15px; /* Rounded corners */
             overflow: hidden;
             border: 5px solid #ff0000; /* Red Border */
-            position: relative;
-            clip-path: polygon(50% 0%, 0% 30%, 0% 70%, 50% 100%, 100% 70%, 100% 30%);
+            display: flex;
+            flex-direction: column;
         }
 
         .logo {
-            position: absolute;
-            top: 15px;
+            position: relative;
+            top: 20px;
             left: 50%;
             transform: translateX(-50%);
-            font-size: 28px;
+            font-size: 30px;
             color: #ff0000; /* Red */
             text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000; /* Red Glow */
         }
 
         #chat-window {
+            flex: 1;
             padding: 20px;
-            height: 350px;
-            overflow-y: scroll;
+            overflow-y: auto;
             background-color: #004d00; /* Green Background */
             border-bottom: 3px solid #ff0000; /* Red Border */
             box-shadow: inset 0 0 20px rgba(0, 255, 0, 0.3); /* Green Inner Glow */
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
         }
 
         #output p {
             background-color: rgba(255, 0, 0, 0.2); /* Red message background */
             padding: 12px;
             border-radius: 10px;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             max-width: 80%;
             word-wrap: break-word;
             color: #e0e0e0;
@@ -67,7 +70,7 @@
         }
 
         #userInput {
-            width: 70%;
+            width: 80%;
             padding: 12px;
             border: 2px solid #ff0000; /* Red Border */
             outline: none;
@@ -76,10 +79,11 @@
             font-size: 14px;
             border-radius: 8px;
             box-shadow: inset 0 0 10px rgba(0, 255, 0, 0.3); /* Green Shadow */
+            margin: 10px 0;
         }
 
         #sendButton {
-            width: 25%;
+            width: 18%;
             padding: 12px;
             background-color: #ff0000; /* Red */
             color: #fff;
@@ -103,6 +107,14 @@
             background-color: #ff0000; /* Red Scrollbar */
             border-radius: 10px;
         }
+
+        /* Flexbox layout for input and button */
+        .input-container {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #4c1c24; /* Dark Red */
+        }
     </style>
 </head>
 <body>
@@ -114,8 +126,10 @@
             <div id="output"></div>
             <div id="feedback"></div>
         </div>
-        <input id="userInput" type="text" placeholder="Ask your Airline Assistant...">
-        <button id="sendButton">Send</button>
+        <div class="input-container">
+            <input id="userInput" type="text" placeholder="Ask your Airline Assistant...">
+            <button id="sendButton">Send</button>
+        </div>
     </div>
     <script>
         document.getElementById('sendButton').addEventListener('click', sendMessage);
