@@ -20,7 +20,7 @@
         }
 
         .chat-container {
-            width: 500px;
+            width: 400px;
             height: 600px;
             background-color: #4c1c24; /* Dark Red */
             box-shadow: 0 0 40px rgba(0, 255, 0, 0.6); /* Green Glow */
@@ -69,6 +69,13 @@
             background-color: rgba(255, 0, 0, 0.4); /* Darker Red */
         }
 
+        .input-container {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #4c1c24; /* Dark Red */
+        }
+
         #userInput {
             width: 80%;
             padding: 12px;
@@ -79,7 +86,6 @@
             font-size: 14px;
             border-radius: 8px;
             box-shadow: inset 0 0 10px rgba(0, 255, 0, 0.3); /* Green Shadow */
-            margin: 10px 0;
         }
 
         #sendButton {
@@ -106,14 +112,6 @@
         #chat-window::-webkit-scrollbar-thumb {
             background-color: #ff0000; /* Red Scrollbar */
             border-radius: 10px;
-        }
-
-        /* Flexbox layout for input and button */
-        .input-container {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px;
-            background-color: #4c1c24; /* Dark Red */
         }
     </style>
 </head>
